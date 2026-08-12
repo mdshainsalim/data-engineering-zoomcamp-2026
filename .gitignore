@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+01-docker-terraform/data/raw/
+__pycache__/
+*.pyc
+
+# Data Engineering Zoomcamp
+01-docker-terraform/data/raw/
+__pycache__/
+*.pyc
