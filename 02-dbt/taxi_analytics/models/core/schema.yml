@@ -1,0 +1,54 @@
+version: 2
+
+models:
+
+  - name: fct_trips
+    description: "Fact table containing transformed NYC taxi trips."
+
+    columns:
+      - name: id
+        description: "Unique taxi trip identifier."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: vendor_id
+        description: "Taxi vendor identifier."
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [1, 2]
+
+      - name: pickup_datetime
+        description: "Trip pickup timestamp."
+        data_tests:
+          - not_null
+
+      - name: dropoff_datetime
+        description: "Trip dropoff timestamp."
+        data_tests:
+          - not_null
+
+      - name: trip_duration_minutes
+        description: "Trip duration in minutes."
+        data_tests:
+          - not_null
+
+      - name: passenger_count
+        description: "Number of passengers recorded for the trip."
+        data_tests:
+          - not_null
+
+  - name: dim_vendor
+    description: "Dimension containing the distinct taxi vendors."
+
+    columns:
+      - name: vendor_id
+        description: "Unique taxi vendor identifier."
+        data_tests:
+          - not_null
+          - unique
+          - accepted_values:
+              arguments:
+                values: [1, 2]

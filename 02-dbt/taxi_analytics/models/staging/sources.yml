@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: raw
+    database: zoomcamp
+    schema: public
+    description: "Raw NYC taxi trip data loaded into PostgreSQL."
+
+    tables:
+      - name: nyc_taxi_trips
+        description: "Raw NYC taxi trip dataset."
+        columns:
+          - name: id
+            description: "Unique taxi trip identifier."
+            data_tests:
+              - not_null
+              - unique
+
+          - name: vendor_id
+            description: "Taxi vendor identifier."
+            data_tests:
+              - not_null
+
+          - name: pickup_datetime
+            description: "Trip pickup timestamp."
+            data_tests:
+              - not_null
+
+          - name: dropoff_datetime
+            description: "Trip dropoff timestamp."
+            data_tests:
+              - not_null

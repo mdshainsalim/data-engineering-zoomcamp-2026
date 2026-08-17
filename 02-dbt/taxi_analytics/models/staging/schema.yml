@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_nyc_taxi_trips
+    description: "Cleaned and transformed NYC taxi trip data."
+
+    columns:
+      - name: id
+        description: "Unique taxi trip identifier."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: vendor_id
+        description: "Taxi vendor identifier."
+        data_tests:
+          - not_null
+
+      - name: pickup_datetime
+        description: "Trip pickup timestamp."
+        data_tests:
+          - not_null
+
+      - name: dropoff_datetime
+        description: "Trip dropoff timestamp."
+        data_tests:
+          - not_null
+
+      - name: trip_duration
+        description: "Trip duration in seconds."
+        data_tests:
+          - not_null
+
+      - name: pickup_date
+        description: "Date of pickup."
+        data_tests:
+          - not_null

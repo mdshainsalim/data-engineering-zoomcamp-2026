@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: daily_trip_summary
+    description: "Daily aggregated NYC taxi trip metrics."
+
+    columns:
+      - name: pickup_date
+        description: "Date of taxi pickup."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: total_trips
+        description: "Total number of trips for the day."
+        data_tests:
+          - not_null
+
+      - name: active_vendors
+        description: "Number of distinct taxi vendors."
+        data_tests:
+          - not_null
+
+      - name: total_passengers
+        description: "Total passengers recorded for the day."
+        data_tests:
+          - not_null
+
+      - name: avg_passenger_count
+        description: "Average passengers per trip."
+        data_tests:
+          - not_null
+
+      - name: avg_trip_duration_minutes
+        description: "Average trip duration in minutes."
+        data_tests:
+          - not_null

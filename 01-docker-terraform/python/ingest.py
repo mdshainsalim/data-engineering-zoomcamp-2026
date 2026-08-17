@@ -123,4 +123,4 @@ print("=" * 60)
 print("NYC Taxi Data Ingestion Completed")
 print(f"Total rows loaded: {total_rows:,}")
 print(f"PostgreSQL table: {TABLE_NAME}")
-print("=" * 60)
+print("=" * 60)docker ps
